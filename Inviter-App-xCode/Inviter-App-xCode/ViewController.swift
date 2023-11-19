@@ -21,6 +21,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sendButton(_ sender: UIButton) {
+        guard let message = messageTextField.text, !message.isEmpty, let numbers = phoneNumberTextField.text?.components(separatedBy: ",").map({ $0.trimmingCharacters(in: .whitespacesAndNewlines) }),
+              !numbers.isEmpty else {
+                    print("message or phone number is empty.")
+                    return
+        }
+        
     }
     
 }
