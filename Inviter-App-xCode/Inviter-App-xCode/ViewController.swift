@@ -70,7 +70,7 @@ class ViewController: UIViewController,MFMessageComposeViewControllerDelegate, U
         sendSMS(message: message, recipient: recipient)
         
         // Introduce a delay between messages (adjust this time interval as needed)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
             self.sendNextMessage(index + 1, numbers: numbers, message: message)
         }
         
