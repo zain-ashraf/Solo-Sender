@@ -39,9 +39,7 @@ class ViewController: UIViewController,MFMessageComposeViewControllerDelegate {
             return
         } // this else statements handles a case where the number is empty
         
-        for number in numbers {
             sendSMS(message: message, recipients: numbers)
-        }
     
         
         func sendSMS(message: String, recipients: [String]) {
