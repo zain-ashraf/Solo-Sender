@@ -9,16 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-    @IBAction func messageTextField(_ sender: UITextField) {
-    }
     
-    @IBAction func phoneNumberTextField(_ sender: UITextField) {
-    }
+
+ 
+    @IBOutlet weak var messageTextField: UITextField!
+    
+    @IBOutlet weak var phoneNumberTextField: UITextField!
     
     @IBAction func sendButton(_ sender: UIButton) {
         guard let message = messageTextField.text, !message.isEmpty, let numbers = phoneNumberTextField.text?.components(separatedBy: ",").map({ $0.trimmingCharacters(in: .whitespacesAndNewlines) }),
@@ -29,5 +25,9 @@ class ViewController: UIViewController {
         
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
 }
 
