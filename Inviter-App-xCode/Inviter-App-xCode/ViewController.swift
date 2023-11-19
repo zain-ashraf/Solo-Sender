@@ -9,12 +9,19 @@ import UIKit
 import MessageUI
 import ContactsUI
 
-class ViewController: UIViewController,MFMessageComposeViewControllerDelegate {
+class ViewController: UIViewController,MFMessageComposeViewControllerDelegate, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        messageTextField.delegate = self
+        phoneNumberTextField.delegate = self
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true
+        }
     
     
     
