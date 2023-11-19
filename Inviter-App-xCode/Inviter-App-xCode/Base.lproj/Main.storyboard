@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Individual Inviter-->
+        <!--Solo Sender-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Inviter_App_xCode" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,7 +49,7 @@
                             <constraint firstItem="JxG-va-BLr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dqK-0F-dS7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Individual Inviter" id="cdb-nF-fdZ"/>
+                    <navigationItem key="navigationItem" title="Solo Sender" id="cdb-nF-fdZ"/>
                     <connections>
                         <outlet property="messageTextField" destination="cIe-sA-rwH" id="PDQ-qu-cPy"/>
                         <outlet property="phoneNumberTextField" destination="edr-XL-te1" id="luY-HH-QVr"/>
