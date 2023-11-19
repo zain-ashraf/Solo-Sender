@@ -7,6 +7,7 @@
 
 import UIKit
 import MessageUI
+import ContactsUI
 
 class ViewController: UIViewController,MFMessageComposeViewControllerDelegate {
     
