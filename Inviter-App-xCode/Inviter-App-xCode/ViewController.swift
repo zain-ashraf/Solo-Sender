@@ -40,9 +40,9 @@ class ViewController: UIViewController,MFMessageComposeViewControllerDelegate {
         } // this else statements handles a case where the number is empty
         
         for number in numbers {
-            //            sendSMS(message: message, recipiennt: number)
+            sendSMS(message: message, recipient: number)
         }
-    }
+    
         
         func sendSMS(message: String, recipient: String) {
             if MFMessageComposeViewController.canSendText() {
@@ -53,7 +53,12 @@ class ViewController: UIViewController,MFMessageComposeViewControllerDelegate {
                 
                 present(messageController, animated: true)
             }
+            else
+            {
+                print("Device unable to send messages.")
+            }
         }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
