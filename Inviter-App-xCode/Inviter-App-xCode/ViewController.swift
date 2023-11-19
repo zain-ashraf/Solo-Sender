@@ -40,15 +40,15 @@ class ViewController: UIViewController,MFMessageComposeViewControllerDelegate {
         } // this else statements handles a case where the number is empty
         
         for number in numbers {
-            sendSMS(message: message, recipient: number)
+            sendSMS(message: message, recipients: numbers)
         }
     
         
-        func sendSMS(message: String, recipient: String) {
+        func sendSMS(message: String, recipients: [String]) {
             if MFMessageComposeViewController.canSendText() {
                 let messageController = MFMessageComposeViewController()
                 messageController.body = message
-                messageController.recipients = [recipient]
+                messageController.recipients = recipients
                 messageController.messageComposeDelegate = self
                 
                 present(messageController, animated: true)
