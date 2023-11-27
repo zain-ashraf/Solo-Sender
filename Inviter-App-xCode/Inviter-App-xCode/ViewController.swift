@@ -9,12 +9,12 @@ import UIKit
 import MessageUI
 import ContactsUI
 
-class ViewController: UIViewController,MFMessageComposeViewControllerDelegate, UITextFieldDelegate {
+class ViewController: UIViewController,MFMessageComposeViewControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        messageTextField.delegate = self
+        messageTextView.delegate = self
         phoneNumberTextField.delegate = self
     }
     
@@ -24,9 +24,8 @@ class ViewController: UIViewController,MFMessageComposeViewControllerDelegate, U
         }
     
     
+    @IBOutlet weak var messageTextView: UITextView!
     
-    
-    @IBOutlet weak var messageTextField: UITextField!
     
     @IBOutlet weak var phoneNumberTextField: UITextField!
     
@@ -46,7 +45,7 @@ class ViewController: UIViewController,MFMessageComposeViewControllerDelegate, U
     }
     
     @IBAction func sendButton(_ sender: UIButton) {
-        guard let message = messageTextField.text, !message.isEmpty, let numbers = phoneNumberTextField.text?.components(separatedBy: ",").map({ $0.trimmingCharacters(in: .whitespacesAndNewlines) }),
+        guard let message = messageTextView.text, !message.isEmpty, let numbers = phoneNumberTextField.text?.components(separatedBy: ",").map({ $0.trimmingCharacters(in: .whitespacesAndNewlines) }),
               // everything above this retrieves the message and phone numbers
               !numbers.isEmpty else {
             print("message or phone number is empty.")
@@ -91,4 +90,3 @@ class ViewController: UIViewController,MFMessageComposeViewControllerDelegate, U
     }
 }
     
-
